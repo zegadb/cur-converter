@@ -1,0 +1,134 @@
+* {padding: 0; margin: 0}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: rgb(30, 30, 30);
+    padding: 40px;
+    height: 100%;    
+    overflow: hidden;
+}
+#header {
+    background-color: rgb(50, 50, 50);
+    height: 60px;
+    width: 25%;
+    min-width: fit-content;
+    margin: auto;
+    border-radius: 20px;
+    /* box-shadow: 0 0 30px 0 rgb(40,40,40); */
+    align-content: center;
+}
+@keyframes sizeBump {
+    0% {scale: 1}
+    50% {
+        scale: 1.02;
+        /* background-color: rgb(55,55,55); */
+        box-shadow: 0px 20px 0px 5px rgb(60,60,60);
+    }
+    100% {scale: 1}
+}
+#header:hover {
+    animation-name: sizeBump;
+    animation-duration: 1s;
+}
+#welcomeMsgHeader {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 20px;
+    width: 100%;
+    color: rgb(240,240,240);
+    text-align: center;
+    user-select: none;
+    /* background-color: white; */
+}
+#welcomeMsgHeaderSmall {
+    font-family: "Montserrat";
+    /* background-color: white; */
+    font-weight: 400;
+    font-size: 15px;
+    width: 100%;
+    color: rgb(150,150,150);
+    text-align: center;
+    user-select: none;
+}
+#converter {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: -60px;
+}
+.converterWindow {
+    width: 400px;
+    height: fit-content;
+    background-color: rgb(50, 50, 50);
+    border-radius: 20px;
+}
+.converterWindow:hover {
+    animation-name: sizeBump;
+    animation-duration: 0.8s;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: rgb(240,240,240);
+    user-select: none;
+}
+.currencySelector:nth-child(1) {
+    border-radius: 20px 0 0 0;
+}
+.currencySelector:nth-last-child(1) {
+    border-radius: 0 20px 0 0;
+}
+.currencySelector {
+    width: 34%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px; 
+}
+@keyframes colorFade {
+    0%   {background-color:rgb(50, 50, 50);}
+    75%  {background-color:rgb(65,75,65);}
+    100% {background-color:rgb(59,59,59);}
+}
+.currencySelector:hover {
+    background-color: rgb(60,60,60);
+    color: rgb(0,255,150);
+    animation-name: colorFade;
+    animation-duration: 0.7s;
+    /* animation-iteration-count: infinite; */
+    animation-timing-function: cubic-bezier(0.5,0.5,0.5,1);
+}
+.converterWindow .selectedRight, .converterWindow .selectedLeft {
+    background-color: rgb(60,60,60);
+    color: rgb(0,255,150);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+.currencyInput {
+    background: none;
+    border: none;
+    color: rgb(240,240,240);
+    font-family: "Orbitron";
+    font-size: 40px;
+    margin: 20px;
+    width: calc(100% - 40px);
+}
+.currencyInput:focus {
+    border: none;
+    outline: none;
+}
+.currencyInput::selection {
+    color: rgb(0,255,150);
+    background-color: rgb(60,60,60);
+}
