@@ -11,19 +11,17 @@ body {
 }
 #header {
     background-color: rgb(50, 50, 50);
-    height: 60px;
-    width: 25%;
-    min-width: fit-content;
+    height: fit-content;
+    width: fit-content;
     margin: auto;
-    border-radius: 20px;
-    /* box-shadow: 0 0 30px 0 rgb(40,40,40); */
+    border-radius: 40px;
     align-content: center;
+    padding: 20px 40px;
 }
 @keyframes sizeBump {
     0% {scale: 1}
     50% {
         scale: 1.02;
-        /* background-color: rgb(55,55,55); */
         box-shadow: 0px 20px 0px 5px rgb(60,60,60);
     }
     100% {scale: 1}
@@ -35,7 +33,7 @@ body {
 #welcomeMsgHeader {
     font-family: "Montserrat";
     font-weight: 400;
-    font-size: 20px;
+    font-size: 60px;
     width: 100%;
     color: rgb(240,240,240);
     text-align: center;
@@ -46,26 +44,29 @@ body {
     font-family: "Montserrat";
     /* background-color: white; */
     font-weight: 400;
-    font-size: 15px;
+    font-size: 40px;
     width: 100%;
     color: rgb(150,150,150);
     text-align: center;
     user-select: none;
 }
 #converter {
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
     column-gap: 50px;
+    row-gap: 50px;
     height: 100%;
     justify-content: center;
     align-items: center;
-    margin: -60px;
+    bottom: 10%;
 }
 .converterWindow {
-    width: 400px;
+    width: 80%;
     height: fit-content;
     background-color: rgb(50, 50, 50);
-    border-radius: 20px;
+    border-radius: 40px;
 }
 .converterWindow:hover {
     animation-name: sizeBump;
@@ -87,9 +88,10 @@ ul {
 }
 .currencySelector {
     width: 34%;
+    font-size: 50px;
     text-align: center;
-    height: 40px;
-    line-height: 40px; 
+    height: 80px;
+    line-height: 80px;
 }
 @keyframes colorFade {
     0%   {background-color:rgb(50, 50, 50);}
@@ -104,7 +106,7 @@ ul {
     /* animation-iteration-count: infinite; */
     animation-timing-function: cubic-bezier(0.5,0.5,0.5,1);
 }
-.converterWindow .selectedRight, .converterWindow .selectedLeft {
+.converterWindow .selected {
     background-color: rgb(60,60,60);
     color: rgb(0,255,150);
 }
@@ -120,7 +122,7 @@ input[type='number'] {
     border: none;
     color: rgb(240,240,240);
     font-family: "Orbitron";
-    font-size: 40px;
+    font-size: 80px;
     margin: 20px;
     width: calc(100% - 40px);
 }
@@ -132,3 +134,48 @@ input[type='number'] {
     color: rgb(0,255,150);
     background-color: rgb(60,60,60);
 }
+/* @media only screen and (min-width: 768px) {
+    #header {
+        background-color: rgb(50, 50, 50);
+        height: 90px;
+        width: 50%;
+        min-width: fit-content;
+        margin: auto;
+        border-radius: 20px;
+        align-content: center;
+    }
+    #welcomeMsgHeader {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 30px;
+        width: 100%;
+        color: rgb(240,240,240);
+        text-align: center;
+        user-select: none;
+    }
+    #welcomeMsgHeaderSmall {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 20px;
+        width: 100%;
+        color: rgb(150,150,150);
+        text-align: center;
+        user-select: none;
+    }
+    #converter {
+        display: flex;
+        flex-direction: column;
+        column-gap: 50px;
+        row-gap: 60px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: -60px;
+    }
+    .converterWindow {
+        width: 700px;
+        height: fit-content;
+        background-color: rgb(50, 50, 50);
+        border-radius: 20px;
+    }
+} */
