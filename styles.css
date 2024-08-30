@@ -5,11 +5,12 @@ html {
 }
 body {
     background-color: rgb(30, 30, 30);
-    padding: 40px;
+    padding: 50px;
     height: 100%;    
     overflow: hidden;
 }
 #header {
+    position: relative;
     background-color: rgb(50, 50, 50);
     height: fit-content;
     width: fit-content;
@@ -17,18 +18,31 @@ body {
     border-radius: 40px;
     align-content: center;
     padding: 20px 40px;
+    animation:
+        floating 2s infinite cubic-bezier(0.5,0,0,1),
+        fadeInDown 2s cubic-bezier(0.5,0,0,1),
+        opacityFade 2s cubic-bezier(0.5,0,0,1)
+    ;
 }
 @keyframes sizeBump {
-    0% {scale: 1}
     50% {
         scale: 1.02;
+        translate: 0 10px;
         box-shadow: 0px 20px 0px 5px rgb(60,60,60);
     }
-    100% {scale: 1}
 }
-#header:hover {
-    animation-name: sizeBump;
-    animation-duration: 1s;
+@keyframes floating {
+    50% {translate: 0 20px;}
+}
+@keyframes rotateInRight {
+    0% {
+        rotate: 15deg;
+    }
+}
+@keyframes rotateInLeft {
+    0% {
+        rotate: -15deg;
+    }
 }
 #welcomeMsgHeader {
     font-family: "Montserrat";
@@ -72,6 +86,22 @@ body {
     animation-name: sizeBump;
     animation-duration: 0.8s;
 }
+#converterLeftWindow {
+    animation:
+    fadeInRight 2s cubic-bezier(0.5,0,0,1),
+    rotateInRight 1.5s cubic-bezier(0.5,0,0,1),
+    sizeFade 1.5s cubic-bezier(0.5,0,0,1),
+    opacityFade 1.5s cubic-bezier(0.5,0,0,1)
+    ;
+}
+#converterRightWindow {
+    animation:
+    fadeInLeft 2s cubic-bezier(0.5,0,0,1),
+    rotateInLeft 1.5s cubic-bezier(0.5,0,0,1),
+    sizeFade 1.5s cubic-bezier(0.5,0,0,1),
+    opacityFade 1.5s cubic-bezier(0.5,0,0,1)
+    ;
+}
 ul {
     list-style-type: none;
     display: flex;
@@ -96,15 +126,56 @@ ul {
 @keyframes colorFade {
     0%   {background-color:rgb(50, 50, 50);}
     75%  {background-color:rgb(65,75,65);}
-    100% {background-color:rgb(59,59,59);}
+    100% {background-color:rgb(54,54,54);}
+}
+@keyframes opacityFade {
+    0% {
+        opacity: 0%;
+    }
+}
+@keyframes fadeInRight {
+    0% {
+        translate: -200px 0;
+    }
+    100% {
+        translate: 0 0;
+    }
+}
+@keyframes fadeInLeft {
+    0% {
+        translate: 200px 0;
+    }
+    100% {
+        translate: 0 0;
+    }
+}
+@keyframes fadeInDown {
+    0% {
+        translate: 0 -100px;
+    }
+}
+@keyframes sizeFade {
+    0% {
+        transform: scale(0.1);
+    }
 }
 .currencySelector:hover {
-    background-color: rgb(60,60,60);
+    background-color: rgb(55,55,55);
     color: rgb(0,255,150);
     animation-name: colorFade;
     animation-duration: 0.7s;
     /* animation-iteration-count: infinite; */
     animation-timing-function: cubic-bezier(0.5,0.5,0.5,1);
+}
+@keyframes opacityDelay {
+    0% {
+        background-color: rgb(50, 50, 50);
+        color: rgb(255,255,255);
+    }
+    100% {
+        background-color: rgb(60,60,60);
+        color: rgb(0,255,150);    
+    }
 }
 .converterWindow .selected {
     background-color: rgb(60,60,60);
