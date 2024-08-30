@@ -23,12 +23,11 @@ body {
         fadeInDown 2s cubic-bezier(0.5,0,0,1),
         opacityFade 2s cubic-bezier(0.5,0,0,1)
     ;
+    transition: opacity 1s cubic-bezier(0.5,0,0,1);
 }
 @keyframes sizeBump {
     50% {
-        scale: 1.02;
-        translate: 0 10px;
-        box-shadow: 0px 20px 0px 5px rgb(60,60,60);
+
     }
 }
 @keyframes floating {
@@ -52,6 +51,8 @@ body {
     color: rgb(240,240,240);
     text-align: center;
     user-select: none;
+    opacity: 0%;
+    transition: opacity 1s cubic-bezier(0.5,0,0,1);
     /* background-color: white; */
 }
 #welcomeMsgHeaderSmall {
@@ -63,6 +64,8 @@ body {
     color: rgb(150,150,150);
     text-align: center;
     user-select: none;
+    opacity: 0%;
+    transition: opacity 1s cubic-bezier(0.5,0,0,1);
 }
 #converter {
     position: relative;
@@ -81,10 +84,14 @@ body {
     height: fit-content;
     background-color: rgb(50, 50, 50);
     border-radius: 40px;
+    transition: 
+        transform 1s cubic-bezier(0.5,0,0,1),
+        box-shadow 1s cubic-bezier(0.5,0,0,1)
+        ;
 }
 .converterWindow:hover {
-    animation-name: sizeBump;
-    animation-duration: 0.8s;
+    transform: scale(1.02);
+    box-shadow: 0 10px 0 5px rgb(60,80,65);
 }
 #converterLeftWindow {
     animation:
@@ -126,11 +133,6 @@ ul {
     opacity: 0%;
     transition: opacity 1s cubic-bezier(0.5,0,0,1);
 }
-@keyframes colorFade {
-    0%   {background-color:rgb(50, 50, 50);}
-    75%  {background-color:rgb(65,75,65);}
-    100% {background-color:rgb(54,54,54);}
-}
 @keyframes opacityFade {
     0% {
         opacity: 0%;
@@ -161,14 +163,6 @@ ul {
     0% {
         transform: scale(0.1);
     }
-}
-.currencySelector:hover {
-    background-color: rgb(55,55,55);
-    color: rgb(0,255,150);
-    animation-name: colorFade;
-    animation-duration: 0.7s;
-    /* animation-iteration-count: infinite; */
-    animation-timing-function: cubic-bezier(0.5,0.5,0.5,1);
 }
 @keyframes opacityDelay {
     0% {

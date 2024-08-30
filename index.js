@@ -1,7 +1,7 @@
+// CURRENCY SELECTORS
 const collection = document.querySelectorAll('.currencySelector');
-let curLeft;
-let curRight;
 
+// SELECTORS ANIMATION
 function selectorAnimation (i) {
     setTimeout(function () {
         collection[i].style.opacity = "100%";
@@ -9,6 +9,22 @@ function selectorAnimation (i) {
 }
 for (let i = 0; i < collection.length; i++) {
     selectorAnimation(i);
+}
+
+const welcomeMsg = document.querySelector('#welcomeMsgHeader');
+// HEADER ANIMATION
+setTimeout(() => {
+    welcomeMsg.style.opacity = '100%';
+}, 1000);
+setTimeout(() => {
+    document.querySelector('#welcomeMsgHeaderSmall').style.opacity = '100%';
+}, 1200);
+
+const welcomeMsgText = 'Currency Converter';
+for (let i = 0; i < welcomeMsgText.length; i++) {
+    setTimeout(() => {
+        welcomeMsg.innerHTML += welcomeMsgText[i];
+    }, 1000+i*100);
 }
 
 
