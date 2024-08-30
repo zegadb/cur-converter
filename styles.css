@@ -13,7 +13,7 @@ body {
     position: relative;
     background-color: rgb(50, 50, 50);
     height: fit-content;
-    width: fit-content;
+    width: 380px;
     margin: auto;
     border-radius: 40px;
     align-content: center;
@@ -23,7 +23,10 @@ body {
         fadeInDown 2s cubic-bezier(0.5,0,0,1),
         opacityFade 2s cubic-bezier(0.5,0,0,1)
     ;
-    transition: opacity 1s cubic-bezier(0.5,0,0,1);
+    transition:
+        opacity 1s cubic-bezier(0.5,0,0,1),
+        width 2s cubic-bezier(0.5,0,0,1)
+    ;
 }
 @keyframes sizeBump {
     50% {
@@ -65,7 +68,11 @@ body {
     text-align: center;
     user-select: none;
     opacity: 0%;
-    transition: opacity 1s cubic-bezier(0.5,0,0,1);
+    transform: translate(0, -50px);
+    transition:
+        opacity 2s cubic-bezier(0.5,0,0,1),
+        transform 2s cubic-bezier(0.5,0,0,1)
+    ;
 }
 #converter {
     position: relative;
